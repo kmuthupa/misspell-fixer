@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "ktichensinkkube"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "ktichensinkkube"
+    spec:
+      containers:
+        - name: "ktichensinkkube"
+          image: "kitchensinkreg.azurecr.io/ktichensinkkube"
+          ports:
+          - containerPort: 80
